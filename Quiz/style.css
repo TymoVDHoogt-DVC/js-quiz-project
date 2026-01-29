@@ -1,0 +1,61 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.quiz-vlak {
+    background: white;
+    padding: 20px;
+    width: 350px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ccc;
+}
+
+h1 {
+    text-align: center;
+}
+
+.btn-plek {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.antwoord-knoppen {
+    background: #e0e0e0;
+}
+
+.antwoord-knoppen:hover {
+    background: #d0d0d0;
+}
+
+.correct {
+    background: #8bc34a !important;
+}
+
+.wrong {
+    background: #f44336 !important;
+}
+
+.volgende-btn {
+    margin-top: 20px;
+    width: 100%;
+    display: none;
+}
+
+.resultaat {
+    margin-top: 20px;
+    font-size: 18px;
+    text-align: center;
+}

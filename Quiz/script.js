@@ -41,10 +41,10 @@ const vragen = [
     }
 ];
 
-const vraagElement = document.getElementById("question");
-const antwoordKnoppen = document.getElementById("answer-buttons");
-const volgendeKnop = document.getElementById("next-btn");
-const resultaatElement = document.getElementById("result");
+const vraagElement = document.getElementById("vraag");
+const antwoordKnoppen = document.getElementById("antwoord-knoppen");
+const volgendeKnop = document.getElementById("volgende-btn");
+const resultaatElement = document.getElementById("resultaat");
 
 let huidigeVraag = 0;
 let score = 0;

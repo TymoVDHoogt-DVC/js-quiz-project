@@ -119,7 +119,7 @@ volgendeKnop.addEventListener("click", () => {
 
 function zieResultaat() {
     resetScherm();
-    vraagElement.textContent = "Quiz afgerond!";
+    vraagElement.textContent = "Alle vragen beantwoord";
     resultaatElement.textContent = `Je score is: ${score} van de ${vragen.length}`;
     voortgangBalk.style.width = "100%";
     opnieuwKnop.style.display = "block";

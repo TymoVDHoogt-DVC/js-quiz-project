@@ -49,10 +49,17 @@ const resultaatElement = document.getElementById("resultaat");
 let huidigeVraag = 0;
 let score = 0;
 
+function shuffle(array) { return array.sort(() => Math.random() - 0.5); 
+    } 
+    
+const opnieuwKnop = document.getElementById("opnieuw-btn");
+
 function startQuiz() {
     huidigeVraag = 0;
     score = 0;
+    shuffle(vragen);
     volgendeKnop.style.display = "none";
+    opnieuwKnop.style.display = "none";
     resultaatElement.textContent = "";
     toonVraag();
 }
@@ -63,7 +70,7 @@ function toonVraag() {
     let q = vragen[huidigeVraag];
     vraagElement.textContent = q.vraag;
 
-    q.antwoorden.forEach(antwoord => {
+    shuffle(q.antwoorden).forEach(antwoord => {
         const knop = document.createElement("button");
         knop.textContent = antwoord.tekst;
         knop.classList.add("answer-btn");
@@ -105,6 +112,9 @@ function zieResultaat() {
     resetScherm();
     vraagElement.textContent = "Quiz afgerond!";
     resultaatElement.textContent = `Je score is: ${score} van de ${vragen.length}`;
+    opnieuwKnop.style.display = "block";
 }
+
+opnieuwKnop.addEventListener("click", startQuiz);
 
 startQuiz();

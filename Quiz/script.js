@@ -41,18 +41,19 @@ const vragen = [
     }
 ];
 
-const vraagElement = document.getElementById("vraag");
-const antwoordKnoppen = document.getElementById("antwoord-knoppen");
-const volgendeKnop = document.getElementById("volgende-btn");
-const resultaatElement = document.getElementById("resultaat");
+const vraagElement = document.querySelector("#vraag");
+const antwoordKnoppen = document.querySelector("#antwoord-knoppen");
+const volgendeKnop = document.querySelector("#volgende-btn");
+const resultaatElement = document.querySelector("#resultaat");
+const opnieuwKnop = document.querySelector("#opnieuw-btn");
+const voortgangBalk = document.querySelector("#voortgang-balk");
 
 let huidigeVraag = 0;
 let score = 0;
 
-function shuffle(array) { return array.sort(() => Math.random() - 0.5); 
-    } 
-    
-const opnieuwKnop = document.getElementById("opnieuw-btn");
+function shuffle(array) {
+    return array.sort(() => Math.random() - 0.5);
+}
 
 function startQuiz() {
     huidigeVraag = 0;
@@ -61,7 +62,13 @@ function startQuiz() {
     volgendeKnop.style.display = "none";
     opnieuwKnop.style.display = "none";
     resultaatElement.textContent = "";
+    voortgangBalk.style.width = "0%";
     toonVraag();
+}
+
+function updateVoortgang() {
+    let percentage = (huidigeVraag / vragen.length) * 100;
+    voortgangBalk.style.width = percentage + "%";
 }
 
 function toonVraag() {
@@ -77,6 +84,8 @@ function toonVraag() {
         knop.addEventListener("click", () => kiesAntwoord(antwoord.juist, knop));
         antwoordKnoppen.appendChild(knop);
     });
+
+    updateVoortgang();
 }
 
 function resetScherm() {
@@ -112,6 +121,7 @@ function zieResultaat() {
     resetScherm();
     vraagElement.textContent = "Quiz afgerond!";
     resultaatElement.textContent = `Je score is: ${score} van de ${vragen.length}`;
+    voortgangBalk.style.width = "100%";
     opnieuwKnop.style.display = "block";
 }
 

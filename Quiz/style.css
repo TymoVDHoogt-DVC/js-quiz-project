@@ -59,3 +59,19 @@ button {
     font-size: 18px;
     text-align: center;
 }
+
+#voortgang-vlak {
+    width: 100%;
+    height: 10px;
+    background: #ddd;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+#voortgang-balk {
+    height: 100%;
+    width: 0%;
+    background: #4caf50;
+    transition: width 0.3s ease;
+}

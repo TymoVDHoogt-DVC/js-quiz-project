@@ -104,7 +104,7 @@ volgendeKnop.addEventListener("click", () => {
 function zieResultaat() {
     resetScherm();
     vraagElement.textContent = "Quiz afgerond!";
-    resultaatElement.textContent = `Je score: ${score} van de ${vragen.length}`;
+    resultaatElement.textContent = `Je score is: ${score} van de ${vragen.length}`;
 }
 
 startQuiz();
